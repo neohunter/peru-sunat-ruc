@@ -21,8 +21,16 @@ Or install it yourself as:
     $ gem install peru_sunat_ruc
 
 ## Usage
+Ruby gem to get information about a company using the RUC number from the SUNAT website.
 
-TODO: Write usage instructions here
+$: << Dir.pwd + '/lib'
+require 'pry'
+require 'peru_sunat_ruc'
+require "peru_sunat_ruc/connector"
+require "peru_sunat_ruc/company"
+
+
+result = PeruSunatRuc.name_from ruc_number
 
 ## Development
 
