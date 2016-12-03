@@ -1,5 +1,39 @@
 # PeruSunatRuc
 
+Ruby gem to get information about a company using the RUC number from the SUNAT website.
+
+## Usage
+
+```ruby
+require 'peru_sunat_ruc'
+result = PeruSunatRuc.name_from ruc_number
+# or
+result = PeruSunatRuc.info_from ruc_number
+result.name
+```
+
+`info_from` returns a `Company` object that represent all the data from Sunat. You can access all the following properties:
+
+* ruc_number
+* name
+* address
+* taxpayer_type
+* taxpayer_status
+* taxpayer_condition
+* inscription_date
+* voucher_system
+* accounting_system
+* economic_activities
+* affiliate_ple_since
+* electronic_emisor
+* activity_trade
+* date_start_activitie
+
+
+Note: This is not in rubygems yet.
+
+---------------------------------------------------
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/peru_sunat_ruc`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
@@ -19,18 +53,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install peru_sunat_ruc
-
-## Usage
-Ruby gem to get information about a company using the RUC number from the SUNAT website.
-
-$: << Dir.pwd + '/lib'
-require 'pry'
-require 'peru_sunat_ruc'
-require "peru_sunat_ruc/connector"
-require "peru_sunat_ruc/company"
-
-
-result = PeruSunatRuc.name_from ruc_number
 
 ## Development
 
