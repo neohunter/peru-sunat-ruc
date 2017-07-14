@@ -17,9 +17,8 @@ class PeruSunatRuc::Connector
   def get_info(ruc)
     page = get_html_page ruc
 
-    # ToDo: Si tiene unresultado valido?
     if page.body.to_s.include? 'ero y volver a ingresar.'
-      raise 'Número de RUC Invalido'
+      raise InvalidRucNumber.new 'Número de RUC Invalido'
     end
 
     PeruSunatRuc::Company.new({

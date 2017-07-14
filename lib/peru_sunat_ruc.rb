@@ -10,4 +10,7 @@ module PeruSunatRuc
   def self.info_from(ruc_number)
     Connector.get_info ruc_number
   end
+
+  class InvalidRucNumber < StandardError
+  end
 end
